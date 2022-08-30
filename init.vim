@@ -31,10 +31,10 @@ set scrolloff=10
 set splitright
 set splitbelow
 
-filetype plugin indent on
+" Indentation settings
+" filetype plugin indent on
 set smartindent
 set expandtab
-" let python_highlight_all = 1
 
 " Define Leader Key as space
 " This is one of the most importend keys.
@@ -97,6 +97,10 @@ Plug 'lukas-reineke/indent-blankline.nvim'
 
 " Your favourite colorscheme
 Plug 'tanvirtin/monokai.nvim'
+
+" root dir plugin
+Plug 'airblade/vim-rooter'
+
 call plug#end()
 
 "Colorscheme
@@ -142,15 +146,24 @@ capabilities.textDocument.completion.completionItem.resolveSupport = {
   }
 }
 
-require'lspconfig'.pyright.setup{
-	capabilities = capabilities,
-	root_dir = vim.lsp.buf.list_workspace_folders()[0]
+require'lspconfig'.pyright.setup {
+  on_attach = custom_on_attach,
+  capabilities = capabilities,
+  settings = {
+    python = {
+      analysis = {
+        typeCheckingMode = 'basic',
+        autoSearchPaths = true,
+        useLibraryCodeForTypes = true
+      }
+    }
+  }
 }
 require'lspconfig'.clangd.setup{
-	capabilities = capabilities
+  capabilities = capabilities
 }
 require'lspconfig'.texlab.setup{
-	capabilities = capabilities
+  capabilities = capabilities
 }
 EOF
 
@@ -160,7 +173,7 @@ lua << EOF
 require'nvim-tree'.setup{
 sort_by = "case_sensitive",
   view = {
-    side = "left",	
+    side = "left",  
     adaptive_size = true,
     mappings = {
       list = {
@@ -172,23 +185,23 @@ sort_by = "case_sensitive",
     group_empty = true,
     icons = {
       show = {
-	folder = false,
-	file = false
+  folder = false,
+  file = false
       },
       glyphs = {
         default = "",
         symlink = "",
         bookmark = "",
-	folder = {
-    	  arrow_closed = "",
-    	  arrow_open = "",
-    	  default = "",
-    	  open = "",
-    	  empty = "",
-    	  empty_open = "",
-    	  symlink = "",
-    	  symlink_open = "",
-        },	
+  folder = {
+        arrow_closed = "",
+        arrow_open = "",
+        default = "",
+        open = "",
+        empty = "",
+        empty_open = "",
+        symlink = "",
+        symlink_open = "",
+        }, 
       },
     },
   },
