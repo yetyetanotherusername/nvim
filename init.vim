@@ -36,6 +36,12 @@ set splitbelow
 set smartindent
 set expandtab
 
+" Autoformat on save
+augroup FormatAutogroup
+  autocmd!
+  autocmd BufWritePost * FormatWrite
+augroup END
+
 " Define Leader Key as space
 " This is one of the most importend keys.
 " If you are in normal mode. You can use this key to
@@ -157,17 +163,7 @@ capabilities.textDocument.completion.completionItem.resolveSupport = {
 }
 
 require'lspconfig'.pyright.setup {
-  on_attach = custom_on_attach,
   capabilities = capabilities,
-  settings = {
-    python = {
-      analysis = {
-        typeCheckingMode = 'basic',
-        autoSearchPaths = true,
-        useLibraryCodeForTypes = true
-      }
-    }
-  }
 }
 require'lspconfig'.clangd.setup{
   capabilities = capabilities
