@@ -348,6 +348,19 @@ require'formatter'.setup {
         }
       end
     },
+    
+    python = {
+      require("formatter.filetypes.python").black,
+      require("formatter.filetypes.python").isort
+    },
+
+    cpp = {
+      require("formatter.filetypes.cpp").clangformat
+    },
+
+    json = {
+      require("formatter.filetypes.json").fixjson
+    },
 
     -- Use the special "*" filetype for defining formatter configurations on
     -- any filetype
