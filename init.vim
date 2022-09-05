@@ -6,7 +6,7 @@
 " No Plugins yet
 
 " Enables beautiful colors
-set termguicolors 
+set termguicolors
 
 " Enable linenumbers
 " If you want relative linenumbers use 'set number relativenumber'
@@ -20,7 +20,7 @@ set signcolumn=yes
 " Set the default clipboard of neovim to your system clipboard
 set clipboard=unnamedplus
 
-" This enables undo across sessions. 
+" This enables undo across sessions.
 set undodir=~/.vim/undodir
 set undofile
 
@@ -36,6 +36,9 @@ set splitbelow
 set smartindent
 set expandtab
 
+" Display ruler
+let &colorcolumn="80,".join(range(100,999),",")
+
 " Autoformat on save
 augroup FormatAutogroup
   autocmd!
@@ -48,7 +51,7 @@ augroup END
 " make some kind of fast typed shortcut combo.
 " Example: <leader>abc
 " This is a defined shortcut but the keys are not pressed
-" At the same time. It's like writing a word. 
+" At the same time. It's like writing a word.
 let mapleader=" "
 
 " Use Esc to get back to normal mode in terminal.
@@ -72,12 +75,12 @@ Plug 'williamboman/mason-lspconfig.nvim'
 Plug 'neovim/nvim-lspconfig' " For easy configuration
 
 " Additional Autocomplete
-Plug 'hrsh7th/nvim-compe' 
+Plug 'hrsh7th/nvim-compe'
 
 " For creating awesome Snippets usefull snippets can be found here: https://github.com/honza/vim-snippets
 Plug 'sirver/ultisnips'
 
-" Git 
+" Git
 Plug 'tpope/vim-fugitive' " Enable commands inside vim
 Plug 'mhinz/vim-signify' " See added modified and deleted lines to the left
 
@@ -123,7 +126,7 @@ call plug#end()
 colorscheme monokai
 
 " Now we configure our plugins this lua configs can also be made
-" in seperate files, but for readability and simplicity i'll keep 
+" in seperate files, but for readability and simplicity i'll keep
 " them here for now.
 
 " Mason config
@@ -147,7 +150,7 @@ EOF
 " with the documentation from here: https://github.com/neovim/nvim-lspconfig
 " The language servers can be installed with :LspInstall <language>
 " Example1: :LspInstall cpp
-" Example2: :LspInstall python 
+" Example2: :LspInstall python
 " Cool lsps are json, bash
 " For each language a default lsp will be installed. The alternatives can be
 " looked up in the repository above
@@ -179,7 +182,7 @@ lua << EOF
 require'nvim-tree'.setup{
 sort_by = "case_sensitive",
   view = {
-    side = "left",  
+    side = "left",
     adaptive_size = true,
     mappings = {
       list = {
@@ -207,7 +210,7 @@ sort_by = "case_sensitive",
         empty_open = "",
         symlink = "",
         symlink_open = "",
-        }, 
+        },
       },
     },
   },
@@ -288,7 +291,7 @@ require'compe'.setup {
     resolve = true,
 
     source = {
-        ultisnips = {kind = "  ", priority=3}, 
+        ultisnips = {kind = "  ", priority=3},
         nvim_lsp = {kind = "   (LSP)", priority=2},
         buffer = {kind = "   (Buffer)", priority=1},
         path = {kind = "   (Path)", priority=0},
@@ -344,7 +347,7 @@ require'formatter'.setup {
         }
       end
     },
-    
+
     python = {
       require("formatter.filetypes.python").black,
       require("formatter.filetypes.python").isort
@@ -377,7 +380,7 @@ EOF
 " Let's do some:
 
 " Navigation across files
-" <leader>ff to find files 
+" <leader>ff to find files
 nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files()<cr>
 " <leader>fg to find all occuarences of a word
 nnoremap <leader>fg <cmd>lua require('telescope.builtin').live_grep()<cr>
@@ -389,9 +392,9 @@ nnoremap <leader>fw <cmd>lua require('telescope.builtin').grep_string()<cr>
 
 " Telescope Git
 " <leader>ggs git status, files can be added with TAB
-nnoremap <leader>ggs <cmd>lua require('telescope.builtin').git_status()<cr> 
+nnoremap <leader>ggs <cmd>lua require('telescope.builtin').git_status()<cr>
 " <leader>gsc git search commits open fuzzy finder over commits, see diff on
 " ENTER over commit
 nnoremap <leader>gsc <cmd>lua require('telescope.builtin').git_commits()<cr>
 " <leader>ggb search git branches. switch to branch on ENTER
-nnoremap <leader>ggb <cmd>lua require('telescope.builtin').git_branches()<cr> 
+nnoremap <leader>ggb <cmd>lua require('telescope.builtin').git_branches()<cr>
