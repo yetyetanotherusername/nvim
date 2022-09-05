@@ -37,7 +37,7 @@ set smartindent
 set expandtab
 
 " Display ruler
-let &colorcolumn="80,".join(range(100,999),",")
+let &colorcolumn="88,".join(range(100,999),",")
 
 " Autoformat on save
 augroup FormatAutogroup
