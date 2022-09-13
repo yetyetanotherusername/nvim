@@ -120,6 +120,9 @@ Plug 'mhartington/formatter.nvim'
 " Plug 'tmsvg/pear-tree'
 Plug 'windwp/nvim-autopairs'
 
+" python auto docstring
+Plug 'pixelneo/vim-python-docstring'
+
 call plug#end()
 
 "Colorscheme
