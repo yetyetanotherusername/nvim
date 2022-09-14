@@ -93,7 +93,6 @@ Plug 'kyazdani42/nvim-web-devicons' " optional, for file icons
 Plug 'kyazdani42/nvim-tree.lua'
 
 " Diffview
-Plug 'nvim-lua/plenary.nvim'
 Plug 'sindrets/diffview.nvim'
 
 " Lualine
@@ -401,3 +400,5 @@ nnoremap <leader>ggs <cmd>lua require('telescope.builtin').git_status()<cr>
 nnoremap <leader>gsc <cmd>lua require('telescope.builtin').git_commits()<cr>
 " <leader>ggb search git branches. switch to branch on ENTER
 nnoremap <leader>ggb <cmd>lua require('telescope.builtin').git_branches()<cr>
+
+nnoremap <leader>s <cmd>lua vim.lsp.buf.signature_help()<cr>
