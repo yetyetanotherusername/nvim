@@ -69,6 +69,9 @@ require('packer').startup(function(use)
   if is_bootstrap then
     require('packer').sync()
   end
+
+  -- monokai colorscheme
+  use 'https://gitlab.com/__tpb/monokai-pro.nvim'
 end)
 
 -- When we are bootstrapping a configuration, it doesn't
@@ -423,6 +426,8 @@ cmp.setup {
     { name = 'luasnip' },
   },
 }
+
+require('monokai')
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
