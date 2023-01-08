@@ -1,3 +1,3 @@
-vim.g.monokaipro_filter = "classic"
+-- vim.g.monokaipro_filter = "classic"
 
-vim.cmd[[colorscheme monokaipro]]
+vim.cmd[[colorscheme sonokai]]
