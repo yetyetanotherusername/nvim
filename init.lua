@@ -60,14 +60,7 @@ require('packer').startup(function(use)
   -- Fuzzy Finder Algorithm which requires local dependencies to be built. Only load if `make` is available
   use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make', cond = vim.fn.executable 'make' == 1 }
 
-  -- my own plugins
-  -- use 'https://gitlab.com/__tpb/monokai-pro.nvim'
-  use 'mbbill/undotree'
-  use 'tanvirtin/monokai.nvim'
-  use {
-	"windwp/nvim-autopairs",
-    config = function() require("nvim-autopairs").setup {} end
-}
+
 
   -- Add custom plugins to packer from ~/.config/nvim/lua/custom/plugins.lua
   local has_plugins, plugins = pcall(require, 'custom.plugins')
@@ -131,7 +124,7 @@ vim.wo.signcolumn = 'yes'
 -- Set colorscheme
 vim.o.termguicolors = true
 vim.cmd [[colorscheme onedark]]
-require('monokai').setup{}
+require('monokai').setup {}
 
 -- Set completeopt to have a better completion experience
 vim.o.completeopt = 'menuone,noselect'
