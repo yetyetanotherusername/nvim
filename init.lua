@@ -127,6 +127,7 @@ vim.wo.signcolumn = 'yes'
 -- Set colorscheme
 vim.o.termguicolors = true
 vim.cmd [[colorscheme onedark]]
+require('monokai').setup{}
 
 -- Set completeopt to have a better completion experience
 vim.o.completeopt = 'menuone,noselect'
@@ -431,7 +432,6 @@ cmp.setup {
 }
 
 -- include personalized settings
-require('mnk')
 require('settings')
 require('undotree')
 require('remap')
