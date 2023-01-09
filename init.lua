@@ -62,8 +62,9 @@ require('packer').startup(function(use)
 
   -- my own plugins
   -- use 'https://gitlab.com/__tpb/monokai-pro.nvim'
-  use 'sainnhe/sonokai'
   use 'mbbill/undotree'
+  use 'tanvirtin/monokai.nvim'
+
   -- Add custom plugins to packer from ~/.config/nvim/lua/custom/plugins.lua
   local has_plugins, plugins = pcall(require, 'custom.plugins')
   if has_plugins then
@@ -430,7 +431,7 @@ cmp.setup {
 }
 
 -- include personalized settings
-require('monokai')
+require('mnk')
 require('settings')
 require('undotree')
 require('remap')
