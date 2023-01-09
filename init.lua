@@ -64,6 +64,10 @@ require('packer').startup(function(use)
   -- use 'https://gitlab.com/__tpb/monokai-pro.nvim'
   use 'mbbill/undotree'
   use 'tanvirtin/monokai.nvim'
+  use {
+	"windwp/nvim-autopairs",
+    config = function() require("nvim-autopairs").setup {} end
+}
 
   -- Add custom plugins to packer from ~/.config/nvim/lua/custom/plugins.lua
   local has_plugins, plugins = pcall(require, 'custom.plugins')
