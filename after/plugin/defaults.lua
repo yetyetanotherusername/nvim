@@ -16,3 +16,5 @@ vim.o.colorcolumn = "80"
 vim.keymap.set('n', '<leader>f', vim.cmd.Format)
 vim.keymap.set('n', '<leader>pv', vim.cmd.Ex)
 vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle)
+vim.keymap.set('i', 'öö', '<Esc>')
+vim.keymap.set('v', 'öö', '<Esc>')
