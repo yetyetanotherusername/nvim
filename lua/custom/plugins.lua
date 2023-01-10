@@ -1,13 +1,7 @@
 return function(use)
-  use(
-    { 'mbbill/undotree' },
-    { 'tanvirtin/monokai.nvim' },
-    { "windwp/nvim-autopairs",
-      config = function()
-        require("nvim-autopairs").setup({})
-      end
-    }
-  )
+  use({ 'tanvirtin/monokai.nvim' })
+  use({ 'mbbill/undotree' })
+  use({ "windwp/nvim-autopairs" })
+  use({ 'jose-elias-alvarez/null-ls.nvim' })
 end
 
---use 'mhartington/formatter.nvim'
