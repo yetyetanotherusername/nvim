@@ -10,11 +10,9 @@ vim.o.expandtab = true
 
 vim.o.relativenumber = true
 
-vim.o.colorcolumn = "80"
+vim.o.colorcolumn = "88"
 
 -- remaps
 vim.keymap.set('n', '<leader>f', vim.cmd.Format)
 vim.keymap.set('n', '<leader>pv', vim.cmd.Ex)
 vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle)
-vim.keymap.set('i', 'öö', '<Esc>')
-vim.keymap.set('v', 'öö', '<Esc>')
