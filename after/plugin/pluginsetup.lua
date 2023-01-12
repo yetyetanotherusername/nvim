@@ -8,7 +8,7 @@ null_ls.setup({
     null_ls.builtins.formatting.isort,
     null_ls.builtins.formatting.black,
     null_ls.builtins.formatting.csharpier,
-
+    null_ls.builtins.formatting.prettierd,
   }
 })
 
