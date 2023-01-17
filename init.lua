@@ -338,7 +338,9 @@ end
 --  Add any additional override configuration in the following tables. They will be passed to
 --  the `settings` field of the server config. You must look up that documentation yourself.
 local servers = {
+  bashls = {},
   clangd = {},
+  cmake = {},
   -- gopls = {},
   pyright = {},
   -- rust_analyzer = {},
@@ -427,4 +429,3 @@ cmp.setup {
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
-
