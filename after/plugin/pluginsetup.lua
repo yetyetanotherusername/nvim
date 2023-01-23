@@ -1,4 +1,5 @@
-require('monokai').setup({})
+-- require('monokai').setup({})
+require('ofirkai').setup({})
 
 require('nvim-autopairs').setup({})
 
@@ -15,7 +16,8 @@ null_ls.setup({
 require('lualine').setup {
   options = {
     icons_enabled = false,
-    theme = 'onedark',
+    -- theme = 'onedark',
+    theme = require('ofirkai.statuslines.lualine').theme,
     component_separators = '|',
     section_separators = '',
   },
