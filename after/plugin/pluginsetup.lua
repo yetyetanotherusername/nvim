@@ -32,3 +32,4 @@ require('indent_blankline').setup {
 }
 
 require('trouble').setup { icons = false }
+require('neogen').setup { requires = "nvim_treesitter/nvim_treesitter" }
