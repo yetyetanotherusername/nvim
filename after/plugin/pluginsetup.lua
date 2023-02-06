@@ -35,4 +35,4 @@ require('trouble').setup { icons = false }
 
 require('neogen').setup { requires = "nvim_treesitter/nvim_treesitter" }
 
-require('clangd_extensions').setup {}
+-- require('clangd_extensions').setup {}

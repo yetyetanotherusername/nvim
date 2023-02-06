@@ -5,5 +5,5 @@ return function(use)
   use({ 'jose-elias-alvarez/null-ls.nvim' })
   use({ "folke/trouble.nvim" })
   use({ "danymat/neogen" })
-  use({ "p00f/clangd_extensions.nvim" })
+  -- use({ "p00f/clangd_extensions.nvim" })
 end
