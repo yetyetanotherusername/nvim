@@ -342,6 +342,7 @@ local servers = {
   clangd = {},
   cmake = {},
   -- gopls = {},
+  csharp_ls = {},
   pyright = {},
   -- rust_analyzer = {},
   -- tsserver = {},
