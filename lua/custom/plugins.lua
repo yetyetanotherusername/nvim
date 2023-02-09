@@ -5,5 +5,6 @@ return function(use)
   use({ 'jose-elias-alvarez/null-ls.nvim' })
   use({ "folke/trouble.nvim" })
   use({ "danymat/neogen" })
+  use({ "hrsh7th/cmp-buffer" })
   -- use({ "p00f/clangd_extensions.nvim" })
 end
