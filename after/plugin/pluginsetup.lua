@@ -35,4 +35,5 @@ require('trouble').setup { icons = false }
 
 require('neogen').setup { requires = "nvim_treesitter/nvim_treesitter" }
 
+require("luasnip.loaders.from_vscode").lazy_load()
 -- require('clangd_extensions').setup {}
