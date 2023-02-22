@@ -13,6 +13,9 @@ vim.o.relativenumber = true
 vim.o.colorcolumn = "88"
 
 -- remaps
-vim.keymap.set('n', '<leader>f', vim.cmd.Format)
-vim.keymap.set('n', '<leader>pv', vim.cmd.Ex)
-vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle)
+vim.keymap.set('n', '<leader>f', vim.cmd.Format, { desc = 'Format current file' })
+vim.keymap.set('n', '<leader>pv', vim.cmd.Ex, { desc = 'Open file browser' })
+vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle, { desc = 'Open undotree' })
+vim.keymap.set('n', "<leader>tn", vim.cmd.tabnew, {desc="Open new tab"})
+vim.keymap.set('n', "<leader>tc", vim.cmd.tabclose, {desc="Close current tab"})
+
