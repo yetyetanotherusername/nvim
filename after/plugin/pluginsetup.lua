@@ -9,9 +9,6 @@ require('ofirkai').setup({
         ['@function'] = {
       fg = scheme.green,
     },
-        ['@keyword'] = {
-      fg = scheme.aqua,
-    },
         ['@keyword.function'] = {
       fg = scheme.aqua,
     },
