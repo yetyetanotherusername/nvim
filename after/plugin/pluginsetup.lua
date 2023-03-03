@@ -1,5 +1,25 @@
 -- require('monokai').setup({})
-require('ofirkai').setup({})
+
+local scheme = require("ofirkai").scheme
+require('ofirkai').setup({
+  custom_hlgroups = {
+        ['@constant'] = {
+      fg = scheme.aqua,
+    },
+        ['@function'] = {
+      fg = scheme.green,
+    },
+        ['@keyword'] = {
+      fg = scheme.aqua,
+    },
+        ['@keyword.function'] = {
+      fg = scheme.aqua,
+    },
+        ['@method'] = {
+      fg = scheme.green,
+    },
+  }
+})
 
 require('nvim-autopairs').setup({})
 
