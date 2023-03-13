@@ -1,23 +1,6 @@
 -- require('monokai').setup({})
 
-local scheme = require("ofirkai").scheme
-require('ofirkai').setup({
-  custom_hlgroups = {
-        ['@constant'] = {
-      fg = scheme.aqua,
-    },
-        ['@function'] = {
-      fg = scheme.green,
-    },
-        ['@keyword.function'] = {
-      fg = scheme.aqua,
-    },
-        ['@method'] = {
-      fg = scheme.green,
-    },
-  }
-})
-
+vim.cmd("colorscheme kanagawa")
 require('nvim-autopairs').setup({})
 
 local null_ls = require('null-ls')
@@ -26,7 +9,7 @@ null_ls.setup({
     null_ls.builtins.formatting.isort,
     null_ls.builtins.formatting.black,
     null_ls.builtins.formatting.csharpier,
-    -- null_ls.builtins.formatting.prettier,
+    null_ls.builtins.formatting.prettier,
   }
 })
 
@@ -34,7 +17,8 @@ require('lualine').setup {
   options = {
     icons_enabled = false,
     -- theme = 'onedark',
-    theme = require('ofirkai.statuslines.lualine').theme,
+    -- theme = require('ofirkai.statuslines.lualine').theme,
+    theme = "kanagawa",
     component_separators = '|',
     section_separators = '',
   },
