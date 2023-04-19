@@ -20,4 +20,3 @@ vim.keymap.set('n', "<leader>tn", vim.cmd.tabnew, { desc = "Open new tab" })
 vim.keymap.set('n', "<leader>tc", vim.cmd.tabclose, { desc = "Close current tab" })
 
 -- dap remaps
-
