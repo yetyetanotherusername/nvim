@@ -39,7 +39,6 @@ dap.configurations.cpp = {
         pid = require('dap.utils').pick_process,
         args = {},
     },
-
 }
 dap.configurations.c = dap.configurations.cpp
 dap.configurations.rust = dap.configurations.cpp

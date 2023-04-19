@@ -20,3 +20,8 @@ vim.keymap.set('n', "<leader>tn", vim.cmd.tabnew, { desc = "Open new tab" })
 vim.keymap.set('n', "<leader>tc", vim.cmd.tabclose, { desc = "Close current tab" })
 
 -- dap remaps
+vim.keymap.set('n', '<leader>b', require('dap').toggle_breakpoint, { desc = 'Toggle breakpoint'})
+vim.keymap.set('n', '<F5>', require('dap').continue, { desc = 'DAP continue'})
+vim.keymap.set('n', '<F10>', require('dap').step_over, { desc = 'DAP step over'})
+vim.keymap.set('n', '<F11>', require('dap').step_into, { desc = 'DAP step into'})
+vim.keymap.set('n', '<F12>', require('dap').step_into, { desc = 'DAP step out'})
