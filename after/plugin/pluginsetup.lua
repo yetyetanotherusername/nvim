@@ -40,6 +40,3 @@ require("luasnip.loaders.from_vscode").lazy_load()
 -- require('clangd_extensions').setup {}
 
 require("dapui").setup()
-
-require("dap-python").setup(vim.fn.getcwd() .. "/.env/bin/python")
-require("dap-python").test_runner = "pytest"

@@ -44,3 +44,11 @@ dap.configurations.c = dap.configurations.cpp
 dap.configurations.rust = dap.configurations.cpp
 
 -- python
+require("dap-python").setup(vim.fn.getcwd() .. "/.env/bin/python")
+require("dap-python").test_runner = "pytest"
+table.insert(require('dap').configurations.python, {
+    type = 'python',
+    request = 'launch',
+    name = 'standard',
+    module = 'pytest'
+})
