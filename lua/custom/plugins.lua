@@ -16,4 +16,5 @@ return function(use)
         ft = { "markdown" },
     })
     use({ "rebelot/kanagawa.nvim" })
+    use({ "mfussenegger/nvim-dap-python" })
 end
