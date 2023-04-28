@@ -342,6 +342,7 @@ local servers = {
     cmake = {},
     -- gopls = {},
     pyright = {},
+    ruff_lsp = {},
     -- rust_analyzer = {},
     -- tsserver = {},
 
