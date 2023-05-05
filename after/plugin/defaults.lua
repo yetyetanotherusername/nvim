@@ -20,6 +20,7 @@ vim.keymap.set('n', '<leader>pv', vim.cmd.Ex, { desc = 'Open file browser' })
 vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle, { desc = 'Open undotree' })
 vim.keymap.set('n', "<leader>tn", vim.cmd.tabnew, { desc = "Open new tab" })
 vim.keymap.set('n', "<leader>tc", vim.cmd.tabclose, { desc = "Close current tab" })
+vim.keymap.set('n', "<leader>sc", require('telescope.builtin').commands, { desc = "[S]earch [C]ommands" })
 
 -- dap remaps
 vim.keymap.set('n', '<leader>b', require('dap').toggle_breakpoint, { desc = 'Toggle breakpoint' })
