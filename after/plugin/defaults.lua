@@ -14,6 +14,8 @@ vim.o.colorcolumn = "88"
 
 vim.o.shiftwidth = 4
 
+vim.o.mouse = ""
+
 -- remaps
 vim.keymap.set('n', '<leader>f', vim.cmd.Format, { desc = 'Format current file' })
 vim.keymap.set('n', '<leader>pv', vim.cmd.Ex, { desc = 'Open file browser' })
