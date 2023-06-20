@@ -17,4 +17,5 @@ return function(use)
     })
     use({ "rebelot/kanagawa.nvim" })
     use({ "mfussenegger/nvim-dap-python" })
+    use({ "mg979/vim-visual-multi" })
 end
