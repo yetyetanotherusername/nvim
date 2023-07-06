@@ -224,16 +224,17 @@ require('nvim-treesitter.configs').setup {
     ensure_installed = {
         'c',
         'cpp',
+        'cmake',
+        'c_sharp',
         'go',
         'lua',
+        'javascript',
+        'markdown',
         'python',
         'rust',
-        'javascript',
         'typescript',
-        'vimdoc',
         'vim',
-        'c_sharp',
-        'markdown'
+        'vimdoc',
     },
 
     highlight = { enable = true },
