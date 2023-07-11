@@ -14,8 +14,6 @@ vim.o.colorcolumn = "88"
 
 vim.o.shiftwidth = 4
 
-vim.o.mouse = ""
-
 -- remaps
 vim.keymap.set('n', '<leader>f', vim.cmd.Format, { desc = 'Format current file' })
 vim.keymap.set('n', '<leader>pv', vim.cmd.Ex, { desc = 'Open file browser' })
@@ -27,9 +25,9 @@ vim.keymap.set('n', "<leader>sc", require('telescope.builtin').commands, { desc 
 -- dap remaps
 vim.keymap.set('n', '<leader>b', require('dap').toggle_breakpoint, { desc = 'Toggle breakpoint' })
 vim.keymap.set('n', '<F5>', require('dap').continue, { desc = 'DAP continue' })
-vim.keymap.set('n', '<F10>', require('dap').step_over, { desc = 'DAP step over' })
-vim.keymap.set('n', '<F11>', require('dap').step_into, { desc = 'DAP step into' })
-vim.keymap.set('n', '<F12>', require('dap').step_into, { desc = 'DAP step out' })
+vim.keymap.set('n', '<F6>', require('dap').step_over, { desc = 'DAP step over' })
+vim.keymap.set('n', '<F7>', require('dap').step_into, { desc = 'DAP step into' })
+vim.keymap.set('n', '<F8>', require('dap').step_out, { desc = 'DAP step out' })
 
 -- open fugitive status in first tab
 vim.cmd("-tab G | tabn")
