@@ -167,7 +167,7 @@ require('Comment').setup()
 
 -- Enable `lukas-reineke/indent-blankline.nvim`
 -- See `:help indent_blankline.txt`
-require('indent_blankline').setup {
+require('ibl').setup {
     char = '┊',
     show_trailing_blankline_indent = false,
 }
@@ -227,12 +227,14 @@ require('nvim-treesitter.configs').setup {
         'cmake',
         'c_sharp',
         'go',
+        'html',
         'lua',
         'javascript',
         'markdown',
         'python',
         'rust',
         'typescript',
+        'tsx',
         'vim',
         'vimdoc',
     },
