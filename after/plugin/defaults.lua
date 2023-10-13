@@ -28,11 +28,13 @@ vim.keymap.set('n', '<F5>', require('dap').continue, { desc = 'DAP continue' })
 vim.keymap.set('n', '<F6>', require('dap').step_over, { desc = 'DAP step over' })
 vim.keymap.set('n', '<F7>', require('dap').step_into, { desc = 'DAP step into' })
 vim.keymap.set('n', '<F8>', require('dap').step_out, { desc = 'DAP step out' })
-vim.keymap.set('n', '<leader>du', require('dap').up, { desc = 'DAP go one stackframe up'})
-vim.keymap.set('n', '<leader>dd', require('dap').down, { desc = 'DAP go one stackframe down'})
+vim.keymap.set('n', '<leader>du', require('dap').up, { desc = 'DAP go one stackframe up' })
+vim.keymap.set('n', '<leader>dd', require('dap').down, { desc = 'DAP go one stackframe down' })
 
 -- open fugitive status in first tab
-vim.cmd("-tab G | tabn")
+if os.execute('git rev-parse --is-inside-work-tree') then
+    vim.cmd("-tab G | tabn")
+end
 
 -- open .mdx files as markdown
 vim.filetype.add({ extension = { mdx = "markdown" } })
