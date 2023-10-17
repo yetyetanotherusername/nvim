@@ -22,7 +22,6 @@ return {
     end,
     ft = { "markdown" },
   },
-  { "rebelot/kanagawa.nvim", lazy = false },
   "mfussenegger/nvim-dap-python",
   "github/copilot.vim",
   "mg979/vim-visual-multi",
