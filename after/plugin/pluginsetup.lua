@@ -1,7 +1,5 @@
--- require('monokai').setup({})
-
-vim.cmd("colorscheme kanagawa")
 require('nvim-autopairs').setup({})
+
 
 local null_ls = require('null-ls')
 null_ls.setup({
@@ -12,26 +10,6 @@ null_ls.setup({
         null_ls.builtins.formatting.prettier,
     }
 })
-
-require('lualine').setup {
-    options = {
-        icons_enabled = false,
-        -- theme = 'onedark',
-        -- theme = require('ofirkai.statuslines.lualine').theme,
-        theme = "kanagawa",
-        component_separators = '|',
-        section_separators = '',
-    },
-}
-
-require("ibl").setup {
-    indent = { char = "┊" },
-    scope = {
-        show_end = false,
-        highlight = { "Function", "Label" },
-        char = "▎",
-    }
-}
 
 require('trouble').setup { icons = false }
 

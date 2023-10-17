@@ -149,6 +149,7 @@ require('lazy').setup({
     branch = '0.1.x',
     dependencies = {
       'nvim-lua/plenary.nvim',
+      "debugloop/telescope-undo.nvim",
       -- Fuzzy Finder Algorithm which requires local dependencies to be built.
       -- Only load if `make` is available. Make sure you have the system
       -- requirements installed.
@@ -162,6 +163,17 @@ require('lazy').setup({
         end,
       },
     },
+    config = function()
+      require("telescope").setup({
+        extensions = {
+          undo = {
+            -- telescope-undo.nvim config, see below
+          },
+        },
+      })
+      require("telescope").load_extension("undo")
+      -- optional: vim.keymap.set("n", "<leader>u", "<cmd>Telescope undo<cr>")
+    end,
   },
 
   {
@@ -185,9 +197,8 @@ require('lazy').setup({
   --    Uncomment the following line and add your plugins to `lua/custom/plugins/*.lua` to get going.
   --
   --    For additional information see: https://github.com/folke/lazy.nvim#-structuring-your-plugins
-  -- { import = 'custom.plugins' },
+  { import = 'custom.plugins' },
 }, {})
-require("lazy").setup("plugins")
 
 -- [[ Setting options ]]
 -- See `:help vim.o`
@@ -217,7 +228,7 @@ vim.wo.signcolumn = 'yes'
 
 -- Set colorscheme
 vim.o.termguicolors = true
-vim.cmd [[colorscheme onedark]]
+vim.cmd("colorscheme kanagawa")
 
 -- Set completeopt to have a better completion experience
 vim.o.completeopt = 'menuone,noselect'
@@ -253,7 +264,9 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 require('lualine').setup {
   options = {
     icons_enabled = false,
-    theme = 'onedark',
+    -- theme = 'onedark',
+    -- theme = require('ofirkai.statuslines.lualine').theme,
+    theme = "kanagawa",
     component_separators = '|',
     section_separators = '',
   },
@@ -264,7 +277,14 @@ require('Comment').setup()
 
 -- Enable `lukas-reineke/indent-blankline.nvim`
 -- See `:help indent_blankline.txt`
-require('ibl').setup {}
+require("ibl").setup {
+  indent = { char = "┊" },
+  scope = {
+    show_end = false,
+    highlight = { "Function", "Label" },
+    char = "▎",
+  },
+}
 
 -- Gitsigns
 -- See `:help gitsigns.txt`

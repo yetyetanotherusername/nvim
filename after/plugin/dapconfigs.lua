@@ -29,6 +29,7 @@ dap.configurations.cpp = {
         end,
         cwd = '${workspaceFolder}',
         stopOnEntry = false,
+        args = { "-b" }
     },
     {
         -- If you get an "Operation not permitted" error using this, try disabling YAMA:
