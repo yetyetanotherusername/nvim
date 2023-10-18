@@ -12,15 +12,11 @@ return {
   "mfussenegger/nvim-dap",
   "rcarriga/nvim-dap-ui",
   "rafamadriz/friendly-snippets",
-
   {
     "iamcco/markdown-preview.nvim",
     cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
-    build = "cd app && npm install",
-    init = function()
-      vim.g.mkdp_filetypes = { "markdown" }
-    end,
     ft = { "markdown" },
+    build = function() vim.fn["mkdp#util#install"]() end,
   },
   "mfussenegger/nvim-dap-python",
   "github/copilot.vim",
