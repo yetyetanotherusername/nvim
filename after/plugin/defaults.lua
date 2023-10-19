@@ -38,4 +38,3 @@ end
 
 -- open .mdx files as markdown
 vim.filetype.add({ extension = { mdx = "markdown" } })
-
