@@ -463,7 +463,7 @@ end
 local servers = {
     bashls = {},
     clangd = {},
-    cmake = {},
+    -- cmake = {},
     -- gopls = {},
     pyright = {},
     ruff_lsp = {},
