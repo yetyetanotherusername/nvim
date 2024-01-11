@@ -17,7 +17,7 @@ vim.o.shiftwidth = 4
 -- remaps
 vim.keymap.set('n', '<leader>f', vim.cmd.Format, { desc = 'Format current file' })
 vim.keymap.set('n', '<leader>pv', vim.cmd.Ex, { desc = 'Open file browser' })
-vim.keymap.set("n", "<leader>u", "<cmd>Telescope undo<cr>")
+vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle)
 vim.keymap.set('n', "<leader>tn", vim.cmd.tabnew, { desc = "Open new tab" })
 vim.keymap.set('n', "<leader>tc", vim.cmd.tabclose, { desc = "Close current tab" })
 vim.keymap.set('n', "<leader>sc", require('telescope.builtin').commands, { desc = "[S]earch [C]ommands" })

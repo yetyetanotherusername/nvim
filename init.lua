@@ -153,7 +153,6 @@ require('lazy').setup({
         branch = '0.1.x',
         dependencies = {
             'nvim-lua/plenary.nvim',
-            "debugloop/telescope-undo.nvim",
             -- Fuzzy Finder Algorithm which requires local dependencies to be built.
             -- Only load if `make` is available. Make sure you have the system
             -- requirements installed.
@@ -168,14 +167,7 @@ require('lazy').setup({
             },
         },
         config = function()
-            require("telescope").setup({
-                extensions = {
-                    undo = {
-                        -- telescope-undo.nvim config, see below
-                    },
-                },
-            })
-            require("telescope").load_extension("undo")
+            require("telescope").setup({})
             -- optional: vim.keymap.set("n", "<leader>u", "<cmd>Telescope undo<cr>")
         end,
     },
