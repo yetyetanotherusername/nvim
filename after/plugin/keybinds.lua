@@ -1,5 +1,5 @@
 -- general vim settings
-vim.o.scrolloff = 10
+vim.o.scrolloff = 20
 
 vim.o.splitright = true
 vim.o.splitbelow = true
