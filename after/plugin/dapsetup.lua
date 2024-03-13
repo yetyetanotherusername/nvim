@@ -39,6 +39,10 @@ dap.configurations.cpp = {
         request = 'attach',
         pid = require('dap.utils').pick_process,
         args = { "-b" },
+        program = function()
+            return vim.fn.input('Path to binary: ', vim.fn.getcwd() .. '/', 'file')
+        end,
+        preRunCommands = { "process handle -p true -s false -n true SIGPWR", "process handle -p true -s false -n true SIGXCPU" }
     },
 }
 dap.configurations.c = dap.configurations.cpp
