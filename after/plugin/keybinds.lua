@@ -21,6 +21,7 @@ vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle)
 vim.keymap.set('n', "<leader>tn", vim.cmd.tabnew, { desc = "Open new tab" })
 vim.keymap.set('n', "<leader>tc", vim.cmd.tabclose, { desc = "Close current tab" })
 vim.keymap.set('n', "<leader>sc", require('telescope.builtin').commands, { desc = "[S]earch [C]ommands" })
+vim.keymap.set('n', "<leader>ss", require('session-lens').search_session, { desc = "Search session" })
 
 -- dap remaps
 vim.keymap.set('n', '<leader>b', require('dap').toggle_breakpoint, { desc = 'Toggle breakpoint' })
