@@ -460,12 +460,10 @@ end
 local servers = {
     bashls = {},
     clangd = {},
-    -- cmake = {},
-    -- gopls = {},
     pyright = {},
     ruff_lsp = {},
+    biome = {},
     -- rust_analyzer = {},
-    -- tsserver = {},
 
     lua_ls = {
         Lua = {
