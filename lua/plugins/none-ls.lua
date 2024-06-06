@@ -11,6 +11,7 @@ return {
                 null_ls.builtins.formatting.cmake_format,
                 null_ls.builtins.formatting.csharpier,
                 null_ls.builtins.formatting.mdformat,
+                null_ls.builtins.formatting.yamlfmt,
             }
         })
     end,
