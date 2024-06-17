@@ -568,6 +568,14 @@ require("lazy").setup({
             end,
             formatters_by_ft = {
                 lua = { "stylua" },
+                cpp = { "clang-format" },
+                javascript = { "biome" },
+                typescript = { "biome" },
+                python = { "ruff" },
+                csharp = { "csharpier" },
+                cmake = { "cmake_format" },
+                markdown = { "mdformat" },
+                yaml = { "yamlfmt" },
 
                 -- Conform can also run multiple formatters sequentially
                 -- python = { "isort", "black" },
