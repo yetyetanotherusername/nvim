@@ -643,9 +643,9 @@ require("lazy").setup({
                 -- No, but seriously. Please read `:help ins-completion`, it is really good!
                 mapping = cmp.mapping.preset.insert({
                     -- Select the [n]ext item
-                    ["<C-n>"] = cmp.mapping.select_next_item(),
+                    -- ["<C-n>"] = cmp.mapping.select_next_item(),
                     -- Select the [p]revious item
-                    ["<C-p>"] = cmp.mapping.select_prev_item(),
+                    -- ["<C-p>"] = cmp.mapping.select_prev_item(),
 
                     -- Scroll the documentation window [b]ack / [f]orward
                     ["<C-b>"] = cmp.mapping.scroll_docs(-4),
@@ -694,6 +694,20 @@ require("lazy").setup({
                     { name = "luasnip" },
                     { name = "path" },
                     { name = "buffer" },
+                },
+                sorting = {
+                    priority_weight = 2,
+                    comparators = {
+                        cmp.config.compare.offset,
+                        cmp.config.compare.exact,
+                        cmp.config.compare.recently_used,
+                        require("clangd_extensions.cmp_scores"),
+                        cmp.config.compare.locality,
+                        cmp.config.compare.kind,
+                        cmp.config.compare.sort_text,
+                        cmp.config.compare.length,
+                        cmp.config.compare.order,
+                    },
                 },
             })
         end,
