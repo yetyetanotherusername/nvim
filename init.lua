@@ -574,7 +574,6 @@ require("lazy").setup({
                 python = { "ruff_lsp" },
                 csharp = { "csharpier" },
                 cmake = { "cmake_format" },
-                markdown = { "mdformat" },
                 yaml = { "yamlfmt" },
 
                 -- Conform can also run multiple formatters sequentially
