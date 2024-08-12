@@ -5,6 +5,9 @@ return {
             path_display = { "shorten" },
             auto_session_supress_dirs = { "~/", "~/Downloads", "/" },
             close_unsupported_windows = false,
+            session_lens = {
+                previewer = false,
+            },
         })
     end,
 }
