@@ -1,4 +1,4 @@
 return {
-    'folke/trouble.nvim',
-    opts = { icons = false }
+    "folke/trouble.nvim",
+    opts = { icons = false },
 }
