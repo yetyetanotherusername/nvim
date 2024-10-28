@@ -20,6 +20,3 @@ vim.keymap.set("n", "<leader>dd", require("dap").down, { desc = "DAP go one stac
 
 -- open .mdx files as markdown
 vim.filetype.add({ extension = { mdx = "markdown" } })
-
--- disable inline diagnostics
-vim.diagnostic.config({ virtual_text = false, signs = false, underline = true })
