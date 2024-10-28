@@ -20,3 +20,6 @@ vim.keymap.set("n", "<leader>dd", require("dap").down, { desc = "DAP go one stac
 
 -- open .mdx files as markdown
 vim.filetype.add({ extension = { mdx = "markdown" } })
+
+-- lsp lines toggle lines on/off
+vim.keymap.set("", "<leader>l", require("lsp_lines").toggle, { desc = "Toggle LSP lines" })
