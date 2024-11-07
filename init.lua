@@ -574,7 +574,7 @@ require("lazy").setup({
                 cpp = { "clang-format" },
                 javascript = { "biome" },
                 typescript = { "biome" },
-                python = { "ruff_lsp" },
+                python = { "ruff" },
                 csharp = { "csharpier" },
                 cmake = { "cmake_format" },
                 yaml = { "yamlfmt" },
