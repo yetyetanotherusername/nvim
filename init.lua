@@ -572,8 +572,8 @@ require("lazy").setup({
             formatters_by_ft = {
                 lua = { "stylua" },
                 cpp = { "clang-format" },
-                javascript = { "biome" },
-                typescript = { "biome" },
+                javascript = { "prettierd" },
+                typescript = { "prettierd" },
                 python = { "ruff" },
                 csharp = { "csharpier" },
                 cmake = { "cmake_format" },
