@@ -564,6 +564,9 @@ require("lazy").setup({
                 -- have a well standardized coding style. You can add additional
                 -- languages here or re-enable it for the disabled ones.
                 local disable_filetypes = { c = true, cpp = true }
+                if vim.g.disable_autoformat or vim.b[bufnr].disable_autoformat then
+                    return
+                end
                 return {
                     timeout_ms = 500,
                     lsp_fallback = not disable_filetypes[vim.bo[bufnr].filetype],
@@ -574,10 +577,11 @@ require("lazy").setup({
                 cpp = { "clang-format" },
                 javascript = { "prettierd" },
                 typescript = { "prettierd" },
+                markdown = { "prettierd" },
                 python = { "ruff" },
                 csharp = { "csharpier" },
                 cmake = { "cmake_format" },
-                yaml = { "yamlfmt" },
+                -- yaml = { "yamlfmt" },
 
                 -- Conform can also run multiple formatters sequentially
                 -- python = { "isort", "black" },
