@@ -51,6 +51,7 @@ dap.configurations.cpp = {
 }
 dap.configurations.c = dap.configurations.cpp
 dap.configurations.rust = dap.configurations.cpp
+dap.configurations.zig = dap.configurations.cpp
 
 -- python
 require("dap-python").setup(vim.fn.getcwd() .. "/.env/bin/python")

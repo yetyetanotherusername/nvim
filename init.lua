@@ -578,6 +578,7 @@ require("lazy").setup({
                 javascript = { "prettierd" },
                 typescript = { "prettierd" },
                 markdown = { "prettierd" },
+                json = { "prettierd" },
                 python = { "ruff" },
                 csharp = { "csharpier" },
                 cmake = { "cmake_format" },
