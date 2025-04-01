@@ -574,13 +574,14 @@ require("lazy").setup({
             end,
             formatters_by_ft = {
                 lua = { "stylua" },
+                c = { "clang-format" },
                 cpp = { "clang-format" },
+                csharp = { "clang-format" },
                 javascript = { "prettierd" },
                 typescript = { "prettierd" },
                 markdown = { "prettierd" },
                 json = { "prettierd" },
                 python = { "ruff" },
-                csharp = { "csharpier" },
                 cmake = { "cmake_format" },
                 -- yaml = { "yamlfmt" },
 
