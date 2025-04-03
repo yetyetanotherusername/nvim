@@ -22,4 +22,7 @@ vim.keymap.set("n", "<leader>dd", require("dap").down, { desc = "DAP go one stac
 vim.filetype.add({ extension = { mdx = "markdown" } })
 
 -- lsp lines toggle lines on/off
-vim.keymap.set("", "<leader>l", require("lsp_lines").toggle, { desc = "Toggle LSP lines" })
+vim.keymap.set("", "<leader>l", function()
+    local new_config = not vim.diagnostic.config().virtual_lines
+    vim.diagnostic.config({ virtual_lines = new_config })
+end, { desc = "Toggle LSP lines" })
