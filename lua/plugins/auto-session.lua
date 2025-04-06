@@ -9,5 +9,11 @@ return {
                 previewer = false,
             },
         })
+        vim.keymap.set(
+            "n",
+            "<leader>ss",
+            require("auto-session.session-lens").search_session,
+            { desc = "[S]earch [s]ession" }
+        )
     end,
 }
