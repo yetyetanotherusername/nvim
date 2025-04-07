@@ -59,7 +59,7 @@ return { -- Autocompletion
             -- See :h blink-cmp-config-keymap for defining your own keymap
             preset = "default",
 
-            ["<Tab>"] = { "select_next", "show" },
+            ["<Tab>"] = { "select_next", "fallback" },
             ["<S-Tab>"] = { "select_prev", "fallback" },
             ["<CR>"] = { "accept", "fallback" },
             ["<C-l>"] = { "snippet_forward", "fallback" },
