@@ -88,3 +88,5 @@ vim.diagnostic.config({
     virtual_text = { current_line = true },
     virtual_lines = true,
 })
+
+vim.o.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
