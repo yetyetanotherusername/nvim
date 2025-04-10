@@ -68,6 +68,13 @@ vim.opt.cursorline = false
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 20
 
+-- if performing an operation that would fail due to unsaved changes in the buffer (like `:q`),
+-- instead raise a dialog asking if you wish to save the current file(s)
+-- See `:help 'confirm'`
+vim.opt.confirm = true
+
+-- personalized settings
+-- indentation setting
 vim.opt.expandtab = true
 vim.opt.autoindent = true
 vim.opt.smartindent = true
@@ -77,16 +84,45 @@ vim.opt.tabstop = 4
 -- Set highlight on search, but clear on pressing <Esc> in normal mode
 vim.opt.hlsearch = true
 
--- personalized settings
+-- display a vertical bar
 vim.o.colorcolumn = "88"
 
 -- open .mdx files as markdown
 vim.filetype.add({ extension = { mdx = "markdown" } })
 
--- enable builtin diagnostic lines
 vim.diagnostic.config({
-    virtual_text = { current_line = true },
+    -- enable builtin diagnostic lines
     virtual_lines = true,
+
+    -- error symbols & severity
+    severity_sort = true,
+    float = { border = "rounded", source = "if_many" },
+    underline = { severity = vim.diagnostic.severity.ERROR },
+    signs = vim.g.have_nerd_font and {
+        text = {
+            [vim.diagnostic.severity.ERROR] = "󰅚 ",
+            [vim.diagnostic.severity.WARN] = "󰀪 ",
+            [vim.diagnostic.severity.INFO] = "󰋽 ",
+            [vim.diagnostic.severity.HINT] = "󰌶 ",
+        },
+    } or {},
+    virtual_text = {
+        -- show error messages for line under cursor
+        current_line = true,
+
+        -- error symbols & severity
+        source = "if_many",
+        spacing = 2,
+        format = function(diagnostic)
+            local diagnostic_message = {
+                [vim.diagnostic.severity.ERROR] = diagnostic.message,
+                [vim.diagnostic.severity.WARN] = diagnostic.message,
+                [vim.diagnostic.severity.INFO] = diagnostic.message,
+                [vim.diagnostic.severity.HINT] = diagnostic.message,
+            }
+            return diagnostic_message[diagnostic.severity]
+        end,
+    },
 })
 
 vim.o.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
