@@ -34,7 +34,7 @@ end, {
 
 -- open gitlab ci configs as special filetype
 vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
-    pattern = ".gitlab*",
+    pattern = "{.gitlab-ci,*_targets}*.{yml,yaml}",
     callback = function()
         vim.bo.filetype = "yaml.gitlab"
     end,
