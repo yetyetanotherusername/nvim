@@ -87,9 +87,13 @@ vim.opt.hlsearch = true
 -- display a vertical bar
 vim.o.colorcolumn = "88"
 
+-- sessionoptsion
+vim.o.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
+
 -- open .mdx files as markdown
 vim.filetype.add({ extension = { mdx = "markdown" } })
 
+-- diagnostic settings
 vim.diagnostic.config({
     -- enable builtin diagnostic lines
     virtual_lines = true,
@@ -124,5 +128,3 @@ vim.diagnostic.config({
         end,
     },
 })
-
-vim.o.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
