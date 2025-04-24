@@ -164,21 +164,58 @@ return { -- LSP Configuration & Plugins
             -- But for many setups, the LSP (`tsserver`) will work just fine
             -- tsserver = {},
             --
+            --bash
+            bashls = {},
 
+            -- cpp
+            clangd = {},
+            cpptools = {},
+            cmakelang = {},
+            codelldb = {},
+            neocmake = {},
+
+            -- python
+            debugpy = {},
+            pyright = {},
+            ruff = {},
+
+            -- html
+            html = {},
+
+            -- json
+            jsonls = {},
+
+            -- lua
             lua_ls = {
-                -- cmd = {...},
-                -- filetypes = { ...},
-                -- capabilities = {},
                 settings = {
                     Lua = {
                         completion = {
                             callSnippet = "Replace",
                         },
-                        -- You can toggle below to ignore Lua_LS's noisy `missing-fields` warnings
-                        -- diagnostics = { disable = { 'missing-fields' } },
                     },
                 },
             },
+            stylua = {},
+
+            -- markdown
+            marksman = {},
+
+            -- rust
+            rust_analyzer = {},
+
+            -- js, ts, asf
+            prettierd = {},
+            ts_ls = {},
+
+            -- toml
+            taplo = {},
+
+            -- yaml
+            gitlab_ci_ls = {},
+            yamlls = {},
+
+            -- zig
+            zls = {},
         }
 
         -- Ensure the servers and tools above are installed
