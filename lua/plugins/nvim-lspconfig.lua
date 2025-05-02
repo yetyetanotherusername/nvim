@@ -108,7 +108,6 @@ return { -- LSP Configuration & Plugins
 
             -- cpp
             clangd = {},
-            cpptools = {},
             cmakelang = {},
             codelldb = {},
             neocmake = {},
