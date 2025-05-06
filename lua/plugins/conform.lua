@@ -38,7 +38,7 @@ return { -- Autoformat
             typescript = { "prettierd" },
             markdown = { "prettierd" },
             json = { "prettierd" },
-            python = { "ruff" },
+            python = { "ruff_format" },
             cmake = { "cmake_format" },
             -- yaml = { "yamlfmt" },
 
