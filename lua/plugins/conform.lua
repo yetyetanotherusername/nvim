@@ -6,9 +6,7 @@ return { -- Autoformat
     keys = {
         {
             "<leader>f",
-            function()
-                require("conform").format({ async = true, lsp_fallback = true })
-            end,
+            function() require("conform").format({ async = true, lsp_fallback = true }) end,
             mode = "",
             desc = "[F]ormat buffer",
         },
@@ -40,6 +38,7 @@ return { -- Autoformat
             json = { "prettierd" },
             python = { "ruff_format" },
             cmake = { "cmake_format" },
+            typst = { "tinymist" },
             -- yaml = { "yamlfmt" },
 
             -- Conform can also run multiple formatters sequentially
