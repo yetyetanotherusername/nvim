@@ -158,6 +158,16 @@ return { -- LSP Configuration & Plugins
             zls = {},
         }
 
+        local capabilities = require("blink.cmp").get_lsp_capabilities()
+
+        for server, config in pairs(servers) do
+            -- This handles overriding only values explicitly passed
+            -- by the server configuration above. Useful when disabling
+            -- certain features of an LSP (for example, turning off formatting for ts_ls)
+            config.capabilities = vim.tbl_deep_extend("force", {}, capabilities, config.capabilities or {})
+            vim.lsp.config(server, config)
+        end
+
         -- Ensure the servers and tools above are installed
         --  To check the current status of installed tools and/or manually install
         --  other tools, you can run
@@ -169,21 +179,13 @@ return { -- LSP Configuration & Plugins
         -- You can add other tools here that you want Mason to install
         -- for you, so that they are available from within Neovim.
         local ensure_installed = vim.tbl_keys(servers or {})
-        vim.list_extend(ensure_installed, {
-            "stylua", -- Used to format Lua code
-        })
+
         require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 
         require("mason-lspconfig").setup({
             ensure_installed = {}, -- explicitly set to an empty table (Kickstart populates installs via mason-tool-installer)
             automatic_installation = false,
-            handlers = {
-                function(server_name)
-                    local config = servers[server_name] or {}
-                    vim.lsp.config(server_name, config)
-                    vim.lsp.enable(server_name)
-                end,
-            },
+            automatic_enable = true,
         })
     end,
 }
