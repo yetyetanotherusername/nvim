@@ -7,7 +7,7 @@ return { -- Fuzzy Finder (files, lsp, etc)
         { "nvim-tree/nvim-web-devicons", enabled = vim.g.have_nerd_font },
     },
     ---@type snacks.Config
-    opts = { picker = {} },
+    opts = { picker = { sources = { files = { ignored = false, hidden = true } } } },
     keys = {
         { "<leader>sh", function() Snacks.picker.help() end, desc = "[S]earch [H]elp" },
         { "<leader>sk", function() Snacks.picker.keymaps() end, desc = "[S]earch [K]eymaps" },
