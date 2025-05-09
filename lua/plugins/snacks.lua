@@ -31,5 +31,6 @@ return { -- Fuzzy Finder (files, lsp, etc)
             function() Snacks.picker.files({ cwd = vim.fn.stdpath("config") }) end,
             desc = "[S]earch [N]eovim files",
         },
+        { "<leader>sl", function() Snacks.picker.git_log() end, desc = "[S]earch git [l]og" },
     },
 }
