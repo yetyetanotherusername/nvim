@@ -4,7 +4,7 @@ return {
         dependencies = {
             "rcarriga/nvim-dap-ui",
             "nvim-neotest/nvim-nio",
-            "williamboman/mason.nvim",
+            "mason-org/mason.nvim",
             "jay-babu/mason-nvim-dap.nvim",
             "mfussenegger/nvim-dap-python",
         },
@@ -13,18 +13,10 @@ return {
 
             dapui.setup()
 
-            dap.listeners.before.attach.dapui_config = function()
-                dapui.open()
-            end
-            dap.listeners.before.launch.dapui_config = function()
-                dapui.open()
-            end
-            dap.listeners.before.event_terminated.dapui_config = function()
-                dapui.close()
-            end
-            dap.listeners.before.event_exited.dapui_config = function()
-                dapui.close()
-            end
+            dap.listeners.before.attach.dapui_config = function() dapui.open() end
+            dap.listeners.before.launch.dapui_config = function() dapui.open() end
+            dap.listeners.before.event_terminated.dapui_config = function() dapui.close() end
+            dap.listeners.before.event_exited.dapui_config = function() dapui.close() end
 
             -- debug adapter configs
 
@@ -40,9 +32,7 @@ return {
                     name = "launch_file",
                     type = "lldb",
                     request = "launch",
-                    program = function()
-                        return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/", "file")
-                    end,
+                    program = function() return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/", "file") end,
                     cwd = "${workspaceFolder}",
                     stopOnEntry = false,
                     args = { "-b" },
@@ -55,9 +45,7 @@ return {
                     request = "attach",
                     pid = require("dap.utils").pick_process,
                     args = { "-b" },
-                    program = function()
-                        return vim.fn.input("Path to binary: ", vim.fn.getcwd() .. "/", "file")
-                    end,
+                    program = function() return vim.fn.input("Path to binary: ", vim.fn.getcwd() .. "/", "file") end,
                     preRunCommands = {
                         "process handle -p true -s false -n true SIGPWR",
                         "process handle -p true -s false -n true SIGXCPU",
