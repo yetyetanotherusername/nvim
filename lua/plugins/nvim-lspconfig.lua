@@ -159,12 +159,12 @@ return { -- LSP Configuration & Plugins
         }
 
         local capabilities = require("blink.cmp").get_lsp_capabilities()
+        vim.lsp.config("*", { capabilities = capabilities })
 
         for server, config in pairs(servers) do
             -- This handles overriding only values explicitly passed
             -- by the server configuration above. Useful when disabling
             -- certain features of an LSP (for example, turning off formatting for ts_ls)
-            config.capabilities = vim.tbl_deep_extend("force", {}, capabilities, config.capabilities or {})
             vim.lsp.config(server, config)
         end
 
