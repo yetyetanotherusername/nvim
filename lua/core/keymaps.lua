@@ -30,7 +30,7 @@ vim.keymap.set("n", "<C-j>", "<C-w><C-j>", { desc = "Move focus to the lower win
 vim.keymap.set("n", "<C-k>", "<C-w><C-k>", { desc = "Move focus to the upper window" })
 
 -- remaps
-vim.keymap.set("n", "<leader>pv", vim.cmd.Ex, { desc = "Open file browser" })
+-- vim.keymap.set("n", "<leader>pv", vim.cmd.Ex, { desc = "Open file browser" })
 vim.keymap.set("n", "<leader>tn", vim.cmd.tabnew, { desc = "Open new tab" })
 vim.keymap.set("n", "<leader>tc", vim.cmd.tabclose, { desc = "[C]lose current [t]ab" })
 
