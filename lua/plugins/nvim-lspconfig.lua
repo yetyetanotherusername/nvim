@@ -158,9 +158,6 @@ return { -- LSP Configuration & Plugins
             zls = {},
         }
 
-        local capabilities = require("blink.cmp").get_lsp_capabilities()
-        vim.lsp.config("*", { capabilities = capabilities })
-
         for server, config in pairs(servers) do
             -- This handles overriding only values explicitly passed
             -- by the server configuration above. Useful when disabling
