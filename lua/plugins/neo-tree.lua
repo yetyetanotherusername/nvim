@@ -5,6 +5,7 @@ return {
         "nvim-lua/plenary.nvim",
         "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
         "MunifTanjim/nui.nvim",
+        { "miversen33/netman.nvim", opts = {} },
     },
     lazy = false,
     keys = {
@@ -15,6 +16,10 @@ return {
             window = {
                 position = "float",
             },
+        },
+        sources = {
+            "filesystem",
+            "netman.ui.neo-tree",
         },
     },
 }
