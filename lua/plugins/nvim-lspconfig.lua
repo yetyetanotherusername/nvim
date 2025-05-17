@@ -3,7 +3,7 @@ return { -- LSP Configuration & Plugins
     dependencies = {
         -- Automatically install LSPs and related tools to stdpath for Neovim
         { "mason-org/mason.nvim", opts = {} }, -- NOTE: Must be loaded before dependants
-        { "mason-org/mason-lspconfig.nvim", opts = {} },
+        "mason-org/mason-lspconfig.nvim",
         "WhoIsSethDaniel/mason-tool-installer.nvim",
 
         { "j-hui/fidget.nvim", opts = {} },
@@ -178,20 +178,11 @@ return { -- LSP Configuration & Plugins
             zls = {},
         }
 
-        for server, config in pairs(servers) do
-            -- This handles overriding only values explicitly passed
-            -- by the server configuration above. Useful when disabling
-            -- certain features of an LSP (for example, turning off formatting for ts_ls)
-            vim.lsp.config(server, config)
-        end
-
-        -- Ensure the servers and tools above are installed
-        --  To check the current status of installed tools and/or manually install
-        --  other tools, you can run
-        --    :Mason
-        --
-        --  You can press `g?` for help in this menu.
-        require("mason").setup()
+        ---@type MasonLspconfigSettings
+        ---@diagnostic disable-next-line: missing-fields
+        require("mason-lspconfig").setup({
+            automatic_enable = vim.tbl_keys(servers or {}),
+        })
 
         -- You can add other tools here that you want Mason to install
         -- for you, so that they are available from within Neovim.
@@ -199,10 +190,11 @@ return { -- LSP Configuration & Plugins
 
         require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 
-        require("mason-lspconfig").setup({
-            ensure_installed = {}, -- explicitly set to an empty table (Kickstart populates installs via mason-tool-installer)
-            automatic_installation = false,
-            automatic_enable = true,
-        })
+        for server, config in pairs(servers) do
+            -- This handles overriding only values explicitly passed
+            -- by the server configuration above. Useful when disabling
+            -- certain features of an LSP (for example, turning off formatting for ts_ls)
+            vim.lsp.config(server, config)
+        end
     end,
 }
