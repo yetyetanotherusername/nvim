@@ -7,8 +7,39 @@ return { -- Fuzzy Finder (files, lsp, etc)
         { "nvim-tree/nvim-web-devicons", enabled = vim.g.have_nerd_font },
     },
     ---@type snacks.Config
-    opts = { picker = { sources = { files = { ignored = false, hidden = true } } } },
+    opts = {
+        ---@class snacks.picker.Config
+        picker = { sources = { files = { ignored = false, hidden = true } } },
+
+        ---@class snacks.indent.Config
+        indent = {
+            indent = {
+                enabled = true,
+                char = "┊",
+            },
+            ---@class snacks.indent.animate: snacks.animate.Config
+            animate = {
+                enabled = false,
+            },
+            ---@class snacks.indent.Scope.Config: snacks.scope.Config
+            scope = {
+                underline = true,
+                char = "▎",
+                hl = {
+                    "SnacksIndent1",
+                    "SnacksIndent2",
+                    "SnacksIndent3",
+                    "SnacksIndent4",
+                    "SnacksIndent5",
+                    "SnacksIndent6",
+                    "SnacksIndent7",
+                    "SnacksIndent8",
+                },
+            },
+        },
+    },
     keys = {
+        -- picker key configs
         { "<leader>sh", function() Snacks.picker.help() end, desc = "[S]earch [H]elp" },
         { "<leader>sk", function() Snacks.picker.keymaps() end, desc = "[S]earch [K]eymaps" },
         { "<leader>sf", function() Snacks.picker.smart() end, desc = "[S]earch [F]iles" },
