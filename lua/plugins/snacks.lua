@@ -37,6 +37,8 @@ return { -- Fuzzy Finder (files, lsp, etc)
                 },
             },
         },
+        ---@class snacks.notifier.Config
+        notifier = {},
     },
     keys = {
         -- picker key configs
