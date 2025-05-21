@@ -9,7 +9,11 @@ return { -- Fuzzy Finder (files, lsp, etc)
     ---@type snacks.Config
     opts = {
         ---@class snacks.picker.Config
-        picker = { sources = { files = { ignored = false, hidden = true } } },
+        picker = {
+            sources = { files = { ignored = false, hidden = true } },
+            matcher = { frecency = true },
+            filter = { cwd = true },
+        },
 
         ---@class snacks.indent.Config
         indent = {
@@ -45,6 +49,7 @@ return { -- Fuzzy Finder (files, lsp, etc)
         { "<leader>sh", function() Snacks.picker.help() end, desc = "[S]earch [H]elp" },
         { "<leader>sk", function() Snacks.picker.keymaps() end, desc = "[S]earch [K]eymaps" },
         { "<leader>sf", function() Snacks.picker.smart() end, desc = "[S]earch [F]iles" },
+        { "<leader>sj", function() Snacks.picker.jumps() end, desc = "[S]earch [J]umps" },
         -- { "<leader>ss", function() Snacks.picker.pickers() end, desc = "[S]earch [S]elect Snacks" },
         {
             "<leader>sw",
