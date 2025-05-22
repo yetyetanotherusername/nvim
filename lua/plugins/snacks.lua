@@ -50,6 +50,7 @@ return { -- Fuzzy Finder (files, lsp, etc)
         { "<leader>sk", function() Snacks.picker.keymaps() end, desc = "[S]earch [K]eymaps" },
         { "<leader>sf", function() Snacks.picker.smart() end, desc = "[S]earch [F]iles" },
         { "<leader>sj", function() Snacks.picker.jumps() end, desc = "[S]earch [J]umps" },
+        { "<leader>sp", function() Snacks.picker.lsp_symbols() end, desc = "[S]earch LS[P] symbols" },
         -- { "<leader>ss", function() Snacks.picker.pickers() end, desc = "[S]earch [S]elect Snacks" },
         {
             "<leader>sw",
