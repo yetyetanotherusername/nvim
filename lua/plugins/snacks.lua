@@ -10,7 +10,10 @@ return { -- Fuzzy Finder (files, lsp, etc)
     opts = {
         ---@class snacks.picker.Config
         picker = {
-            sources = { files = { ignored = false, hidden = true } },
+            sources = {
+                files = { ignored = false, hidden = true },
+                explorer = { auto_close = true, hidden = true, layout = { preset = "default" } },
+            },
             matcher = { frecency = true },
             filter = { cwd = true },
         },
@@ -43,6 +46,8 @@ return { -- Fuzzy Finder (files, lsp, etc)
         },
         ---@class snacks.notifier.Config
         notifier = {},
+        animate = {},
+        explorer = { replace_netrw = true },
     },
     keys = {
         -- picker key configs
@@ -71,5 +76,6 @@ return { -- Fuzzy Finder (files, lsp, etc)
             desc = "[S]earch [N]eovim files",
         },
         { "<leader>sl", function() Snacks.picker.git_log() end, desc = "[S]earch git [l]og" },
+        { "<leader>pv", function() Snacks.picker.explorer() end, desc = "File explorer" },
     },
 }
