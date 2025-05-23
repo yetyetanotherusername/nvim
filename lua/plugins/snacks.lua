@@ -8,11 +8,25 @@ return { -- Fuzzy Finder (files, lsp, etc)
     },
     ---@type snacks.Config
     opts = {
+        ---@class snacks.animate.Config
+        animate = {},
+
+        ---@class snacks.explorer.Config
+        explorer = { replace_netrw = true },
+
         ---@class snacks.picker.Config
         picker = {
             sources = {
-                files = { ignored = false, hidden = true },
-                explorer = { auto_close = true, hidden = true, layout = { preset = "default" } },
+                files = {
+                    ignored = false,
+                    hidden = true,
+                },
+                explorer = {
+                    auto_close = true,
+                    hidden = true,
+                    git_status_untracked = false,
+                    layout = { preset = "default" },
+                },
             },
             matcher = { frecency = true },
             filter = { cwd = true },
@@ -44,10 +58,9 @@ return { -- Fuzzy Finder (files, lsp, etc)
                 },
             },
         },
+
         ---@class snacks.notifier.Config
         notifier = {},
-        animate = {},
-        explorer = { replace_netrw = true },
     },
     keys = {
         -- picker key configs
@@ -56,7 +69,6 @@ return { -- Fuzzy Finder (files, lsp, etc)
         { "<leader>sf", function() Snacks.picker.smart() end, desc = "[S]earch [F]iles" },
         { "<leader>sj", function() Snacks.picker.jumps() end, desc = "[S]earch [J]umps" },
         { "<leader>sp", function() Snacks.picker.lsp_symbols() end, desc = "[S]earch LS[P] symbols" },
-        -- { "<leader>ss", function() Snacks.picker.pickers() end, desc = "[S]earch [S]elect Snacks" },
         {
             "<leader>sw",
             function() Snacks.picker.grep_word() end,
