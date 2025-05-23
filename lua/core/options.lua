@@ -74,13 +74,6 @@ vim.o.scrolloff = 20
 vim.o.confirm = true
 
 -- personalized settings
--- indentation setting
-vim.o.expandtab = true
-vim.o.autoindent = true
-vim.o.smartindent = true
-vim.o.shiftwidth = 4
-vim.o.tabstop = 4
-
 -- Set highlight on search, but clear on pressing <Esc> in normal mode
 vim.o.hlsearch = true
 
