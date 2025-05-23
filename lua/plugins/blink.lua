@@ -55,13 +55,11 @@ return { -- Autocompletion
             -- <c-k>: Toggle signature help
             --
             -- See :h blink-cmp-config-keymap for defining your own keymap
-            preset = "enter",
+            preset = "default",
 
-            -- ["<Tab>"] = { "select_next", "fallback" },
-            -- ["<S-Tab>"] = { "select_prev", "fallback" },
-            -- ["<CR>"] = { "select_and_accept", "fallback" },
-            -- ["<C-l>"] = { "snippet_forward", "fallback" },
-            -- ["<C-h>"] = { "snippet_backward", "fallback" },
+            ["<C-z>"] = { "select_and_accept", "fallback" },
+            ["<C-l>"] = { "snippet_forward", "fallback" },
+            ["<C-h>"] = { "snippet_backward", "fallback" },
 
             -- For more advanced Luasnip keymaps (e.g. selecting choice nodes, expansion) see:
             --    https://github.com/L3MON4D3/LuaSnip?tab=readme-ov-file#keymaps
