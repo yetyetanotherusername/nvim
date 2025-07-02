@@ -106,77 +106,85 @@ return { -- LSP Configuration & Plugins
             end,
         })
 
+        ---@class LspServersConfig
+        ---@field mason table<string, vim.lsp.Config>
+        ---@field others table<string, vim.lsp.Config>
         local servers = {
-            --bash
-            bashls = {},
+            mason = {
+                --bash
+                bashls = {},
 
-            -- cpp
-            clangd = {},
-            cmakelang = {},
-            codelldb = {},
-            neocmake = {},
+                -- cpp
+                clangd = {},
+                cmakelang = {},
+                codelldb = {},
+                neocmake = {},
 
-            -- python
-            debugpy = {},
-            pyright = {},
-            ruff = {},
+                -- python
+                debugpy = {},
+                pyright = {},
+                ruff = {},
 
-            -- html
-            html = {},
+                -- html
+                html = {},
 
-            -- json
-            jsonls = {},
+                -- json
+                jsonls = {},
 
-            -- lua
-            lua_ls = {
-                settings = {
-                    Lua = {
-                        completion = {
-                            callSnippet = "Replace",
+                -- lua
+                lua_ls = {
+                    settings = {
+                        Lua = {
+                            completion = {
+                                callSnippet = "Replace",
+                            },
                         },
                     },
                 },
+                stylua = {},
+
+                -- markdown
+                marksman = {},
+
+                -- rust
+                rust_analyzer = {},
+
+                -- js, ts, asf
+                prettierd = {},
+                ts_ls = {},
+
+                -- toml
+                taplo = {},
+
+                -- yaml
+                gitlab_ci_ls = {},
+                yamlls = {},
+
+                -- zig
+                zls = {},
             },
-            stylua = {},
 
-            -- markdown
-            marksman = {},
-
-            -- rust
-            rust_analyzer = {},
-
-            -- js, ts, asf
-            prettierd = {},
-            ts_ls = {},
-
-            -- toml
-            taplo = {},
-
-            -- yaml
-            gitlab_ci_ls = {},
-            yamlls = {},
-
-            -- zig
-            zls = {},
+            others = {},
         }
+
+        local ensure_installed = vim.tbl_keys(servers.mason or {})
+
+        require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
+
+        -- Either merge all additional server configs from the `servers.mason` and `servers.others` tables
+        -- to the default language server configs as provided by nvim-lspconfig or
+        -- define a custom server config that's unavailable on nvim-lspconfig.
+        for server, config in pairs(vim.tbl_extend("keep", servers.mason, servers.others)) do
+            if not vim.tbl_isempty(config) then
+                vim.lsp.config(server, config)
+            end
+        end
 
         ---@type MasonLspconfigSettings
         ---@diagnostic disable-next-line: missing-fields
         require("mason-lspconfig").setup({
-            automatic_enable = vim.tbl_keys(servers or {}),
+            ensure_installed = {},
+            automatic_enable = true,
         })
-
-        -- You can add other tools here that you want Mason to install
-        -- for you, so that they are available from within Neovim.
-        local ensure_installed = vim.tbl_keys(servers or {})
-
-        require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
-
-        for server, config in pairs(servers) do
-            -- This handles overriding only values explicitly passed
-            -- by the server configuration above. Useful when disabling
-            -- certain features of an LSP (for example, turning off formatting for ts_ls)
-            vim.lsp.config(server, config)
-        end
     end,
 }
