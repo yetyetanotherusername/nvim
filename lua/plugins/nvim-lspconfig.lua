@@ -118,7 +118,7 @@ return { -- LSP Configuration & Plugins
                 clangd = {},
                 cmakelang = {},
                 codelldb = {},
-                neocmake = {},
+                neocmake = { init_options = { lint = { enable = false } } },
 
                 -- python
                 debugpy = {},
