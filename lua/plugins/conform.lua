@@ -39,7 +39,7 @@ return { -- Autoformat
             python = { "ruff_format" },
             cmake = { "cmake_format" },
             typst = { "tinymist" },
-            -- yaml = { "yamlfmt" },
+            yaml = { "prettierd" },
 
             -- Conform can also run multiple formatters sequentially
             -- python = { "isort", "black" },
