@@ -34,6 +34,7 @@ return { -- Autoformat
             csharp = { "clang-format" },
             javascript = { "prettierd" },
             typescript = { "prettierd" },
+            typescriptreact = { "prettierd" },
             markdown = { "prettierd" },
             json = { "prettierd" },
             python = { "ruff_format" },
