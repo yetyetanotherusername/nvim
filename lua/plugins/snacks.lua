@@ -5,6 +5,7 @@ return { -- Fuzzy Finder (files, lsp, etc)
     dependencies = {
         -- Useful for getting pretty icons, but requires a Nerd Font.
         { "nvim-tree/nvim-web-devicons", enabled = vim.g.have_nerd_font },
+        { "folke/todo-comments.nvim" },
     },
     ---@type snacks.Config
     opts = {
@@ -89,5 +90,10 @@ return { -- Fuzzy Finder (files, lsp, etc)
         },
         { "<leader>sl", function() Snacks.picker.git_log() end, desc = "[S]earch git [l]og" },
         { "<leader>pv", function() Snacks.picker.explorer() end, desc = "File explorer" },
+        {
+            "<leader>st",
+            function() Snacks.picker.todo_comments() end,
+            desc = "[S]earch [T]odo comments",
+        },
     },
 }
