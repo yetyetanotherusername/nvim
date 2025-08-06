@@ -3,10 +3,9 @@ return { -- LSP Configuration & Plugins
     dependencies = {
         -- Automatically install LSPs and related tools to stdpath for Neovim
         { "mason-org/mason.nvim", opts = {} }, -- NOTE: Must be loaded before dependants
+        { "saghen/blink.cmp", opts = {} },
         "mason-org/mason-lspconfig.nvim",
         "WhoIsSethDaniel/mason-tool-installer.nvim",
-
-        "saghen/blink.cmp",
     },
     config = function()
         vim.api.nvim_create_autocmd("LspAttach", {
