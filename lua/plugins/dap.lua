@@ -59,10 +59,13 @@ return {
             require("dap-python").setup(vim.fn.getcwd() .. "/.env/bin/python")
             require("dap-python").test_runner = "pytest"
             dap.configurations.python = {
-                type = "python",
-                request = "launch",
-                name = "standard",
-                program = "${file}",
+                {
+                    type = "python",
+                    request = "launch",
+                    name = "standard",
+                    program = function() return vim.fn.input("Path to file: ", vim.fn.getcwd() .. "/", "file") end,
+                    cwd = "${workspaceFolder}",
+                },
             }
 
             -- dap remaps
