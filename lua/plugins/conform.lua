@@ -37,7 +37,7 @@ return { -- Autoformat
             typescriptreact = { "prettierd" },
             markdown = { "prettierd" },
             json = { "prettierd" },
-            python = { "ruff_format" },
+            python = { "ruff_format", "ruff_organize_imports" },
             cmake = { "cmake_format" },
             typst = { "tinymist" },
             yaml = { "prettierd" },
