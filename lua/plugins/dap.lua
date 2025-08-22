@@ -62,9 +62,9 @@ return {
                 {
                     type = "python",
                     request = "launch",
-                    name = "standard",
-                    program = function() return vim.fn.input("Path to file: ", vim.fn.getcwd() .. "/", "file") end,
-                    cwd = "${workspaceFolder}",
+                    name = "launch this file",
+                    program = "${file}",
+                    cwd = function() return vim.fn.getcwd() end,
                 },
             }
 

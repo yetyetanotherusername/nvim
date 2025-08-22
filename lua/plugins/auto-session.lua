@@ -13,5 +13,6 @@ return {
         session_lens = {
             previewer = false,
         },
+        post_restore_cmds = { function() require("dap-python").setup(vim.fn.getcwd() .. "/.env/bin/python") end },
     },
 }
